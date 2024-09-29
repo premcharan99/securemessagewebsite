@@ -1,0 +1,316 @@
+/* Full-screen background to black */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000; /* Full-screen black background */
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar container */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #E6E6E6; /* Light grey background */
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Slight shadow around the navbar */
+    border: 2px solid #007BFF; /* Blue border around the navbar */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Navbar buttons */
+.nav-link {
+    width: 150px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #333; /* Dark background for buttons */
+    border: none;
+    border-radius: 50px; /* Full rounded corners for buttons */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Active button (Send) */
+.nav-link.active {
+    background-color: #3A5BA0; /* Blue background for the active button */
+    transform: scale(1.05); /* Slightly larger active button */
+}
+
+/* Hover effect for buttons */
+.nav-link:hover {
+    background-color: #555; /* Darker background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.nav-link.active:hover {
+    background-color: #3A5BA0; /* Keep the blue color for the active button */
+}
+
+/* Content layout */
+.content-container {
+    padding: 20px;
+    color: white;
+    flex-grow: 1;
+}
+
+/* Title styling */
+.title {
+    color: red;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Sub-title styling for 'SEND' section */
+.sub-title {
+    color: #3A5BA0;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Input section padding */
+.input-section {
+    padding: 20px;
+}
+
+/* Text area for message input (code input) */
+.message-box {
+    width: 50%;
+    height: 270px;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for coding feel */
+    color: #111;
+    background-color: #f0f4ff;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a slight elevation */
+    white-space: pre-wrap; /* Preserve whitespace for code-like text */
+    overflow-x: auto;
+}
+
+.message-box::placeholder {
+    color: gray;
+}
+
+/* Timer dropdown styling */
+.timer-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timer-label {
+    color: white;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.timer-dropdown {
+    padding: 8px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 150px;
+}
+
+/* Generate button */
+.generate-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    width: 150px;
+}
+
+.generate-btn.active {
+    background-color: #3A5BA0; /* Highlight active state when timer is set */
+    transform: scale(1.05);
+}
+
+.generate-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Display section for the generated code */
+.output-section {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.code-label {
+    margin-right: 10px;
+}
+
+.code-box {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code-like appearance */
+    background-color: #e6e6e6;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+/* Copy button styling */
+.copy-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Note below the code */
+.note {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Input field and button container for retrieving code */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Input field for code entry */
+.input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.input::placeholder {
+    color: #888;
+}
+
+/* Retrieve button styling */
+.retrieve-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.retrieve-btn:hover {
+    background-color: #555;
+}
+
+/* Message output box */
+.message-output {
+    width: 50%;
+    height: 270px;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for coding */
+    color: #111;
+    background-color: #f0f4ff;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for slight elevation */
+    overflow-x: auto;
+}
+
+/* Copy button for message output */
+.copy-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #444;
+}
+
+/* Prism.js Code Block Styles */
+pre[class*="language-"] {
+    background-color: #2d2d2d; /* Dark background for code block */
+    color: #ccc; /* Light text color */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    overflow-x: auto; /* Horizontal scroll for long code */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+code[class*="language-"] {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code text */
+}
+
+.token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata {
+    color: #7f7f7f; /* Comments */
+}
+
+.token.punctuation {
+    color: #fff; /* Punctuation */
+}
+
+.token.tag, .token.attr-name, .token.namespace, .token.deleted {
+    color: #f92672; /* HTML Tags */
+}
+
+.token.function-name {
+    color: #e6db74; /* Function Names */
+}
+
+.token.boolean, .token.number, .token.function {
+    color: #ae81ff; /* Numbers and Boolean */
+}
+
+.token.property, .token.class-name, .token.constant, .token.symbol {
+    color: #66d9ef; /* Property/Classes */
+}
+
+.token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin {
+    color: #66d9ef; /* Keywords and Built-in Functions */
+}
+
+.token.string {
+    color: #a6e22e; /* Strings */
+}
